@@ -27,12 +27,12 @@ Protoboard (opcional)
 PN532	Pino Arduino
 
 Arduino | PN532
-SDA	      SDA
-SCL	      SCL
-IRQ	       2
-RSTO       3
-VCC	       5V
-GND	      GND
+SDA	    |  SDA
+SCL	    |  SCL
+IRQ	    |   2
+RSTO    |   3
+VCC	    |   5V
+GND	    |  GND
 
 ## 🔌 Esquema de ligação (modo I2C)
 
