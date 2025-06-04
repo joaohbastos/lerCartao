@@ -42,6 +42,7 @@ SCL       SCL
 VCC       VCC
 GND       GND
 
+
 ## ⚠️ Importante: O PN532 pode operar em I2C, SPI ou UART. Este projeto está configurado para I2C.
 
 ## 💻 Código
