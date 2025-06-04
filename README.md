@@ -1,43 +1,43 @@
-🪪 Leitor de Cartão RFID — Arduino
-Este projeto utiliza um módulo de leitura RFID para identificar cartões ou tags e exibir o código lido através da Serial Monitor. É ideal para sistemas de identificação, controle de acesso ou automação.
+🪪 Leitor de Cartão RFID com PN532 — Arduino
+Este projeto utiliza um módulo de leitura RFID PN532 para identificar cartões ou tags RFID/NFC e exibir o código lido através do Serial Monitor. Ideal para sistemas de identificação, controle de acesso ou automação.
 
 🚀 Funcionalidades
-Lê o UID (código único) de cartões ou tags RFID.
+Lê o UID (código único) de cartões ou tags RFID/NFC.
 
 Exibe o UID no Serial Monitor.
 
-Pode ser adaptado para sistemas de controle de acesso ou identificação automática.
+Compatível com diversas tags NFC de 13.56 MHz.
+
+Pode ser adaptado para sistemas de controle de acesso.
 
 🛠️ Componentes necessários
 1x Arduino (UNO, Mega, etc.)
 
-1x Módulo Leitor RFID (MFRC522 ou PN532)
+1x Módulo Leitor RFID PN532
 
-Tags ou cartões RFID (13.56 MHz)
+Tags ou cartões RFID/NFC (13.56 MHz)
 
 Jumpers
 
 Protoboard (opcional)
 
-🔌 Esquema de ligação (para MFRC522 via SPI)
-Módulo RFID	Pino Arduino
-SDA (SS)	10
-SCK	13
-MOSI	11
-MISO	12
-IRQ	Não conectado
+🔌 Esquema de ligação (modo I2C)
+PN532	Pino Arduino
+SDA	A4
+SCL	A5
+IRQ	2
+RSTO	3
+VCC	5V
 GND	GND
-RST	9
-3.3V	3.3V
 
-⚠️ Importante: O MFRC522 deve ser alimentado com 3.3V!
+⚠️ Importante: O PN532 pode operar em I2C, SPI ou UART. Este projeto está configurado para I2C.
 
 💻 Código
 O código está no arquivo: lerCartao.ino.
 
 Principais pontos:
 
-Inicializa a comunicação com o módulo RFID.
+Inicializa a comunicação com o PN532 via I2C.
 
 Aguarda aproximação de um cartão ou tag.
 
@@ -48,7 +48,11 @@ Monte o circuito conforme o esquema acima.
 
 Abra o Arduino IDE.
 
-Instale a biblioteca MFRC522 ou PN532, conforme o seu módulo.
+Instale a biblioteca Adafruit PN532:
+
+Acesse: Sketch → Include Library → Manage Libraries...
+
+Busque por "Adafruit PN532" e instale.
 
 Carregue o código lerCartao.ino.
 
@@ -59,11 +63,10 @@ Abra o Serial Monitor e ajuste a velocidade conforme configurado no código (ger
 Aproximar um cartão ou tag do leitor e observar o UID exibido no monitor.
 
 📝 Configurações importantes
-Ajuste os pinos no código se estiver usando um módulo ou conexão diferente (por exemplo, I2C).
+Endereço I2C padrão do PN532: 0x24 ou 0x48 dependendo da versão do módulo e dos jumpers.
+→ Verifique no datasheet do seu módulo!
 
-Confirme a tensão de alimentação:
-→ MFRC522: 3.3V
-→ PN532: depende do modo de operação.
+Se for usar SPI ou UART, adapte o código e a ligação.
 
 📄 Licença
 Este projeto é de livre uso para fins educacionais e pessoais.
@@ -71,4 +74,4 @@ Este projeto é de livre uso para fins educacionais e pessoais.
 ℹ️ Observações
 Pode ser facilmente adaptado para acionar relés, LEDs ou dispositivos de bloqueio após leitura do cartão.
 
-Para maior segurança, compare o UID lido com um banco de dados ou uma lista autorizada no código.
+Para maior segurança, compare o UID lido com uma lista autorizada no código.
