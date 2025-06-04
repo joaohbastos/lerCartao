@@ -1,4 +1,4 @@
-🪪 # Leitor de Cartão RFID com PN532 — Arduino
+# 🪪 Leitor de Cartão RFID com PN532 — Arduino
 
 Este projeto utiliza um módulo de leitura RFID PN532 para identificar cartões ou tags RFID/NFC e exibir o código lido através do Serial Monitor. Ideal para sistemas de identificação, controle de acesso ou automação.
 
