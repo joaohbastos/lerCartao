@@ -22,13 +22,24 @@ Jumpers
 Protoboard (opcional)
 
 🔌 Esquema de ligação (modo I2C)
+
 PN532	Pino Arduino
-SDA	A4
-SCL	A5
-IRQ	2
-RSTO	3
-VCC	5V
-GND	GND
+
+Arduino | PN532
+SDA	      SDA
+SCL	      SCL
+IRQ	       2
+RSTO       3
+VCC	       5V
+GND	      GND
+
+🔌 Esquema de ligação (modo I2C)
+
+Arduino | Display
+SDA       SDA
+SCL       SCL
+VCC       VCC
+GND       GND
 
 ⚠️ Importante: O PN532 pode operar em I2C, SPI ou UART. Este projeto está configurado para I2C.
 
