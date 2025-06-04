@@ -2,7 +2,7 @@
 
 Este projeto utiliza um módulo de leitura RFID PN532 para identificar cartões ou tags RFID/NFC e exibir o código lido através do Serial Monitor. Ideal para sistemas de identificação, controle de acesso ou automação.
 
-🚀 Funcionalidades
+## 🚀 Funcionalidades
 Lê o UID (código único) de cartões ou tags RFID/NFC.
 
 Exibe o UID no Serial Monitor.
@@ -11,7 +11,7 @@ Compatível com diversas tags NFC de 13.56 MHz.
 
 Pode ser adaptado para sistemas de controle de acesso.
 
-🛠️ Componentes necessários
+## 🛠️ Componentes necessários
 1x Arduino (UNO, Mega, etc.)
 
 1x Módulo Leitor RFID PN532
@@ -22,7 +22,7 @@ Jumpers
 
 Protoboard (opcional)
 
-🔌 Esquema de ligação (modo I2C)
+## 🔌 Esquema de ligação (modo I2C)
 
 PN532	Pino Arduino
 
@@ -34,7 +34,7 @@ RSTO       3
 VCC	       5V
 GND	      GND
 
-🔌 Esquema de ligação (modo I2C)
+## 🔌 Esquema de ligação (modo I2C)
 
 Arduino | Display
 SDA       SDA
@@ -42,9 +42,9 @@ SCL       SCL
 VCC       VCC
 GND       GND
 
-⚠️ Importante: O PN532 pode operar em I2C, SPI ou UART. Este projeto está configurado para I2C.
+## ⚠️ Importante: O PN532 pode operar em I2C, SPI ou UART. Este projeto está configurado para I2C.
 
-💻 Código
+## 💻 Código
 O código está no arquivo: lerCartao.ino.
 
 Principais pontos:
@@ -55,7 +55,7 @@ Aguarda aproximação de um cartão ou tag.
 
 Lê e exibe o UID no Serial Monitor.
 
-⚙️ Como usar
+## ⚙️ Como usar
 Monte o circuito conforme o esquema acima.
 
 Abra o Arduino IDE.
@@ -74,16 +74,16 @@ Abra o Serial Monitor e ajuste a velocidade conforme configurado no código (ger
 
 Aproximar um cartão ou tag do leitor e observar o UID exibido no monitor.
 
-📝 Configurações importantes
+## 📝 Configurações importantes
 Endereço I2C padrão do PN532: 0x24 ou 0x48 dependendo da versão do módulo e dos jumpers.
 → Verifique no datasheet do seu módulo!
 
 Se for usar SPI ou UART, adapte o código e a ligação.
 
-📄 Licença
+## 📄 Licença
 Este projeto é de livre uso para fins educacionais e pessoais.
 
-ℹ️ Observações
+## ℹ️ Observações
 Pode ser facilmente adaptado para acionar relés, LEDs ou dispositivos de bloqueio após leitura do cartão.
 
 Para maior segurança, compare o UID lido com uma lista autorizada no código.
