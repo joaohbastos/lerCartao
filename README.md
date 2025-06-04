@@ -26,21 +26,27 @@ Protoboard (opcional)
 
 PN532	Pino Arduino
 
-Arduino | PN532
-SDA	    |  SDA
-SCL	    |  SCL
-IRQ	    |   2
-RSTO    |   3
-VCC	    |   5V
-GND	    |  GND
+## 🔌 Esquema de ligação (modo I2C) - PN532
 
-## 🔌 Esquema de ligação (modo I2C)
+| PN532  | Arduino |
+|--------|---------|
+| SDA    | SDA     |
+| SCL    | SCL     |
+| IRQ    | 2       |
+| RSTO   | 3       |
+| VCC    | 5V      |
+| GND    | GND     |
 
-Arduino | Display
-SDA       SDA
-SCL       SCL
-VCC       VCC
-GND       GND
+---
+
+## 🔌 Esquema de ligação (modo I2C) - Display
+
+| Display | Arduino |
+|---------|---------|
+| SDA     | SDA     |
+| SCL     | SCL     |
+| VCC     | VCC     |
+| GND     | GND     |
 
 
 ## ⚠️ Importante: O PN532 pode operar em I2C, SPI ou UART. Este projeto está configurado para I2C.
